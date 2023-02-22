@@ -10,9 +10,6 @@ class SettingController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
-    if (box.read("darkmode")) {
-      isDark.value = box.read("darkmode");
-    }
     super.onInit();
   }
 

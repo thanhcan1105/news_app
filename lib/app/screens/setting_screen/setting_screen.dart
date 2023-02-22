@@ -17,22 +17,25 @@ class SettingScreen extends GetView<SettingController> {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         child: Column(
           children: [
-            Row(
-              children: [
-                const Text("Dark mode"),
-                const Spacer(),
-                Obx(
-                  () => CupertinoSwitch(
-                    value: controller.isDark.value,
-                    onChanged: (value) {
-                      controller.darkModeSwitch(value);
-                      Get.changeTheme(
-                        value ? ThemeData.light() : ThemeData.dark(),
-                      );
-                    },
+            GestureDetector(
+              onTap: () {},
+              child: Row(
+                children: [
+                  const Text("Dark mode"),
+                  const Spacer(),
+                  Obx(
+                    () => CupertinoSwitch(
+                      value: controller.isDark.value,
+                      onChanged: (value) {
+                        controller.darkModeSwitch(value);
+                        Get.changeTheme(
+                          Get.isDarkMode ? ThemeData.light() : ThemeData.dark(),
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             MaterialButton(
               onPressed: () {
@@ -50,12 +53,3 @@ class SettingScreen extends GetView<SettingController> {
     );
   }
 }
-
-final ThemeData appThemeData = ThemeData(
-  primaryColor: Colors.blueAccent,
-  primarySwatch: Colors.blue,
-);
-
-final ThemeData darkAppThemeData = ThemeData(
-  primaryColor: Colors.blueGrey,
-);

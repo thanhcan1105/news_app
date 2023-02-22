@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class HomeService {
   Future getNewsLists() async {
     final res = await http.get(
-      Uri.parse('${CONST.BASE_URL}/getResults'),
+      Uri.parse('${CONST.BASE_URL}/getResults?page=1'),
     );
     var bodyResponse = jsonDecode(res.body);
     if (res.statusCode == 200) {

@@ -10,18 +10,18 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.amber,
         elevation: 0.5,
         title: Text(
           'News App'.toUpperCase(),
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
         ),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 10),
             child: Icon(
-              Icons.search,
-              color: Colors.black,
+              Icons.menu,
+              color: Colors.white,
               size: 35,
             ),
           ),
@@ -91,8 +91,8 @@ class HomeScreen extends GetView<HomeController> {
                                         Text(
                                           "${element.title}",
                                           style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black),
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -101,7 +101,9 @@ class HomeScreen extends GetView<HomeController> {
                                         ),
                                         Text(
                                           "${element.shortDescription}",
-                                          style: const TextStyle(),
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                          ),
                                           maxLines: 4,
                                           overflow: TextOverflow.ellipsis,
                                         )
